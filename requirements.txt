@@ -4,3 +4,4 @@ PyMuPDF
 python-docx
 aspose-words
 langchain
+langchain_google_genai
