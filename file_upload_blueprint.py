@@ -26,8 +26,8 @@ load_dotenv()
 os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", task_type="semantic_similarity")
-bedrock=boto3.client(service_name="bedrock-runtime")
-bedrock_embeddings=BedrockEmbeddings(model_id="amazon.titan-embed-text-v1",client=bedrock)
+#bedrock=boto3.client(service_name="bedrock-runtime")
+#bedrock_embeddings=BedrockEmbeddings(model_id="amazon.titan-embed-text-v1",client=bedrock)
 
 ALLOWED_EXTENSIONS = {'pdf','text','docx','doc','csv','xlsx'}
 db_path = "./chroma_db"
@@ -53,7 +53,7 @@ def upload_files():
     text_splitter = CharacterTextSplitter(separator = "\n\n",chunk_size = 250,chunk_overlap  = 20)
     docs = text_splitter.create_documents([extracted_texts])
     print(docs)
-    db = Chroma.from_documents(documents=docs, embedding=bedrock_embeddings,persist_directory="./chroma_db")
+    db = Chroma.from_documents(documents=docs, embedding=embeddings,persist_directory="./chroma_db")
     print(db)
     return jsonify({"Message":"Data base is created"})
 
