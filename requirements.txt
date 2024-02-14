@@ -267,7 +267,7 @@ python-multipart==0.0.6
 python-socketio==5.9.0
 pytorch-lightning==2.1.2
 pytz==2022.7.1
-pytz-deprecation-shim==0.1.0.post0
+pytz-deprecation-shim
 pywin32
 PyYAML==6.0.1
 pyzmq==25.0.0
