@@ -1,7 +1,6 @@
 from flask import Blueprint, request, jsonify
 from flask import Flask, request, jsonify
 from methods import handle_file_upload, is_allowed_file
-import comtypes.client 
 from langchain.chains.question_answering import load_qa_chain
 from langchain.vectorstores import FAISS
 from langchain.indexes import VectorstoreIndexCreator
