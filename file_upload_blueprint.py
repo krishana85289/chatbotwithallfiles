@@ -33,11 +33,11 @@ ALLOWED_EXTENSIONS = {'pdf','text','docx','doc','csv','xlsx'}
 db_path = "./chroma_db"
 
 # Check if the file exists
-if os.path.exists(db_path):
+"""if os.path.exists(db_path):
     # Delete the file
     shutil.rmtree(db_path, ignore_errors=True)
     # Print a message
-    print(f"Deleted {db_path}")
+    print(f"Deleted {db_path}")"""
 def is_allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 file_upload_blueprint = Blueprint('file_upload', __name__)

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Question Answering Chatbot</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Question Answering Chatbot</h1>
+      <p>Ask me anything based on the documents you upload</p>
+    </div>
+    <div class="content">
+      <!-- <form id="uploadForm" enctype="multipart/form-data">
+        <label for="file">Upload document</label>
+        <input type="file" id="file" accept=".pdf,.txt,.doc,.docx">
+        <button type="button" id="processDocument">Process Document</button>
+      </form> -->
+      <div class="upload-container">
+        <input type="file" id="fileInput" class="hidden"  accept=".txt, .pdf, .doc, .docx, .csv, .xlsx" multiple>
+        <label for="fileInput" class="upload-label">
+          <span class="upload-icon">📁</span>
+          <span class="upload-text">Choose a file</span>
+        </label>
+        <div id="fileNameDisplay" class="file-name-display"></div>
+        <button class="submit-btn" onclick="uploadFiles()">Submit File</button>
+        <div id="responseDisplay" class="response-display"></div>
+      </div>
+      <div class="left-section">
+        <div class="chatbox" id="chatbox">
+          <!-- Sample messages -->
+          <div class="message">
+            <img src="{{ url_for('static', filename='images/bot.png') }}" alt="Bot">
+            <div class="text">Hi, I’m a question answering chatbot. I can answer your questions based on the documents
+              you upload.</div>
+          </div>
+          <div id="output" class="output"></div>
+        </div>
+        <div class="form">
+          <input type="text" id="input" placeholder="Type your question here">
+          <button id="send" onclick="sendQuestion()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
