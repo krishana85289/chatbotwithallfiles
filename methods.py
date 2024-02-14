@@ -6,7 +6,6 @@ from werkzeug.utils import secure_filename
 import fitz
 import sys
 from docx import Document
-import comtypes.client  # Import comtypes.client for handling .doc files
 import pythoncom
 ALLOWED_EXTENSIONS = {'pdf', 'txt','docx','doc','csv','xlsx'}
 
