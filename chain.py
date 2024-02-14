@@ -27,15 +27,15 @@ load_dotenv()
 os.getenv("GOOGLE_API_KEY")
 from langchain_community.embeddings import BedrockEmbeddings
 from langchain.llms.bedrock import Bedrock
-bedrock=boto3.client(service_name="bedrock-runtime")
-bedrock_embeddings=BedrockEmbeddings(model_id="amazon.titan-embed-text-v1",client=bedrock)
+#bedrock=boto3.client(service_name="bedrock-runtime")
+#bedrock_embeddings=BedrockEmbeddings(model_id="amazon.titan-embed-text-v1",client=bedrock)
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", task_type="semantic_similarity")
 #vectorstore = FAISS.load_local("faiss_index", bedrock_embeddings)
 from langchain.retrievers.multi_query import MultiQueryRetriever
 from langchain_community.vectorstores import Chroma
 
 print(db)
-vector=Chroma(persist_directory="./chroma_db", embedding_function=bedrock_embeddings)
+vector=Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
 def retriever(query):
     
     retriever = vector.as_retriever(
