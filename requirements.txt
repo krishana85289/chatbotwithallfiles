@@ -7,3 +7,4 @@ aspose-words
 langchain
 langchain_google_genai
 boto3
+LlamaAPI
