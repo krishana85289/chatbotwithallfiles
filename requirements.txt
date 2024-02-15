@@ -9,5 +9,5 @@ langchain_google_genai
 boto3
 LlamaAPI
 langchain_experimental
-chromadb
+chromadb==0.4.18
 db-sqlite3
