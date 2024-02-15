@@ -8,3 +8,4 @@ langchain
 langchain_google_genai
 boto3
 LlamaAPI
+langchain_experimental
