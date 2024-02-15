@@ -10,4 +10,4 @@ boto3
 LlamaAPI
 langchain_experimental
 chromadb
-sqlite3
+db-sqlite3
